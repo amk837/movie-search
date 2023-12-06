@@ -10,6 +10,9 @@
     "success-message": "echo \n\n\n🚀  Everything is awesome. 🚀\n\n🖥️  Auto checking completed, ready to deploy.🖥️\n\n☁️  Run: git push ☁️"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.14.20",
     "next": "14.0.3",
     "prop-types": "^15.8.1",
     "react": "^18",
@@ -34,13 +37,13 @@
       "pre-commit": "lint-staged",
       "post-commit": "npm run success-message",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-     }
+    }
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,html}": [
       "npm run lint"
-      ]
-    },
+    ]
+  },
   "commitlint": {
     "rules": {
       "references-empty": [
