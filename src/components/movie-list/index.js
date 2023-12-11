@@ -35,9 +35,11 @@ export default function MovieList({
   }, []);
   return (
     <Stack>
-      <Link href={href}>
-        <Typography color='primary' variant='h6'>{listName}</Typography>
-      </Link>
+      { href ? (
+        <Link href={href}>
+          <Typography color='primary' variant='h6'>{listName}</Typography>
+        </Link>
+      ) : <Typography color='primary' variant='h6'>{listName}</Typography>}
 
       <Stack direction='row' flexWrap='wrap' pt={1}>
         {isLoading ? (Array(20).fill(0).map((val, index) => (
@@ -47,10 +49,11 @@ export default function MovieList({
         ))
         ) : results.map((movieId) => {
           const movie = allMovies[movieId];
+          if (!movie.poster_path && !movie.backdrop_path) console.log(movie);
           return (
             <Box width='20%' mt={1} key={movieId}>
               <MovieCard
-                movie={{ ...movie, href: `/${movieId}`, img: `${process.env.NEXT_PUBLIC_IMAGE_API_DOMAIN}/w500${movie.poster_path}` }}
+                movie={{ ...movie, href: `/${movieId}`, img: `${process.env.NEXT_PUBLIC_IMAGE_API_DOMAIN}/w500${movie.poster_path || movie.backdrop_path}` }}
               />
             </Box>
           );

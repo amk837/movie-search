@@ -45,7 +45,7 @@ function Header() {
           </Link>
 
           <Link href={ROUTES.topMovies.path}>
-            <NavButton>Top rated</NavButton>
+            <NavButton>Top Rated</NavButton>
           </Link>
 
         </Stack>

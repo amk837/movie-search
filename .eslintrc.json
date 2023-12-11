@@ -3,6 +3,7 @@
     "browser": true,
     "es2021": true
   },
+  "plugins": ["react", "react-hooks", "jsx-a11y"],
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
@@ -27,16 +28,15 @@
       "version": "detect"
     }
   },
-  "plugins": ["react", "react-hooks", "jsx-a11y"],
-    "rules": {
-      "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-      "max-len": ["error", { "code": 160 }],
-      "linebreak-style": ["error", "unix"],
-      "quotes": ["error", "single"],
-      "jsx-quotes": ["error", "prefer-single"],
-      "jsx-a11y/anchor-has-content": 0,
-      "jsx-a11y/anchor-is-valid": "warn",
-      "no-param-reassign": ["error", { "props": false }],
-      "react/require-default-props": "off"
-    }
+  "rules": {
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "max-len": ["error", { "code": 160 }],
+    "linebreak-style": ["error", "unix"],
+    "quotes": ["error", "single"],
+    "jsx-quotes": ["error", "prefer-single"],
+    "jsx-a11y/anchor-has-content": 0,
+    "jsx-a11y/anchor-is-valid": "warn",
+    "no-param-reassign": ["error", { "props": false }],
+    "react/require-default-props": "off"
+  }
 }
