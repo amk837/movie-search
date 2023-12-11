@@ -15,6 +15,14 @@ const movieAPIs = {
     const url = `${MOVIE_API_BASE}/upcoming`;
     return makeRequest(url, undefined, { api_key: API_KEY, page });
   },
+  getPopularMovies({ page = 1 }) {
+    const url = `${MOVIE_API_BASE}/popular`;
+    return makeRequest(url, undefined, { api_key: API_KEY, page });
+  },
+  getTopMovies({ page = 1 }) {
+    const url = `${MOVIE_API_BASE}/top_rated`;
+    return makeRequest(url, undefined, { api_key: API_KEY, page });
+  },
 };
 
 export default movieAPIs;

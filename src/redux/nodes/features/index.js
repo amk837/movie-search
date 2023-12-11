@@ -1,8 +1,8 @@
 import { combineReducers } from '@reduxjs/toolkit';
-import latestMoviesReducer from './latest-movies/slice';
+import moviesReducer from './movies/slice';
 
 const featuresReducer = combineReducers({
-  latestMovies: latestMoviesReducer,
+  movies: moviesReducer,
 });
 
 export default featuresReducer;
