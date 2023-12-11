@@ -20,7 +20,7 @@ const theme = responsiveFontSizes(createTheme({
       contrastText: '#fff',
     },
     action: {
-      hover: '#000',
+      hover: '#8e95a5',
     },
     divider: '#8e95a5',
   },

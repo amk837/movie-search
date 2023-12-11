@@ -36,6 +36,7 @@
       "jsx-quotes": ["error", "prefer-single"],
       "jsx-a11y/anchor-has-content": 0,
       "jsx-a11y/anchor-is-valid": "warn",
-      "no-param-reassign": ["error", { "props": false }]
+      "no-param-reassign": ["error", { "props": false }],
+      "react/require-default-props": "off"
     }
 }

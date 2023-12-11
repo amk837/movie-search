@@ -5,7 +5,7 @@ import { ThemeProvider } from '@emotion/react';
 import { node } from 'prop-types';
 import theme from '../theme';
 
-function Initializer({ children }) {
+function Initializer({ children = null }) {
   return (
     <ThemeProvider theme={theme}>
       {children}
@@ -13,7 +13,6 @@ function Initializer({ children }) {
   );
 }
 
-Initializer.defaultProps = { children: null };
 Initializer.propTypes = { children: node };
 
 export default Initializer;

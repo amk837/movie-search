@@ -4,7 +4,7 @@ import React from 'react';
 import { Stack } from '@mui/material';
 import { node } from 'prop-types';
 
-function ContentLayout({ children }) {
+function ContentLayout({ children = null }) {
   return (
     <Stack sx={{ width: '80%', margin: 'auto' }}>
       {children}
@@ -12,6 +12,5 @@ function ContentLayout({ children }) {
   );
 }
 
-ContentLayout.defaultProps = { children: null };
 ContentLayout.propTypes = { children: node };
 export default ContentLayout;

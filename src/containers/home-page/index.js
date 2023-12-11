@@ -42,18 +42,17 @@ export default function Home() {
         </Link>
 
         <Stack direction='row' flexWrap='wrap' pt={1}>
-          {isLoading ? (Array(20).fill(0).map(() => (
-            <Box width='20%' mt={1}>
+          {isLoading ? (Array(20).fill(0).map((val, index) => (
+            <Box width='20%' mt={1} key={`${val}-${index + val}`}>
               <MovieCardSkeleton />
             </Box>
           ))
           ) : results.map((movieId) => {
             const movie = allMovies[movieId];
             return (
-              <Box width='20%' mt={1}>
+              <Box width='20%' mt={1} key={movieId}>
                 <MovieCard
                   movie={{ ...movie, href: `/${movieId}`, img: `${process.env.NEXT_PUBLIC_IMAGE_API_DOMAIN}/w500${movie.poster_path}` }}
-                  id={movieId}
                 />
               </Box>
             );

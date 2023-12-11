@@ -2,7 +2,7 @@ import MuiPagination from '@mui/material/Pagination';
 import { func, number } from 'prop-types';
 import React from 'react';
 
-export default function Pagination({ page, count, onChange }) {
+export default function Pagination({ page = 1, count = 10, onChange = () => {} }) {
   return (
     <MuiPagination
       page={page}
@@ -18,5 +18,4 @@ export default function Pagination({ page, count, onChange }) {
   );
 }
 
-Pagination.defaultProps = { page: 1, count: 10, onChange: () => {} };
 Pagination.propTypes = { page: number, count: number, onChange: func };

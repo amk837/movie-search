@@ -15,7 +15,7 @@ const NavButton = styled.div`
   width: auto;
   color: ${theme.palette.info.main};
   &: hover {
-    background: ${theme.palette.action.hover};
+    background: black;
     color: ${theme.palette.primary.main};
   }
 `;

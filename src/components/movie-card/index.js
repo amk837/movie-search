@@ -51,12 +51,18 @@ const Title = styled(Typography)`
   height: 10%;
 `;
 
-export default function MovieCard({ movie: { img, title, href } }) {
+export default function MovieCard({
+  movie: {
+    img = '',
+    title = '',
+    href = '',
+  },
+}) {
   return (
     <Card href={href} title={title}>
       <ImageContainer>
         <ImageWrapper>
-          <Image src={img} alt={title} />
+          <Image src={img} alt={title} sizes='20vw' />
         </ImageWrapper>
       </ImageContainer>
 
@@ -64,14 +70,6 @@ export default function MovieCard({ movie: { img, title, href } }) {
     </Card>
   );
 }
-
-MovieCard.defaultProps = {
-  movie: {
-    img: '',
-    title: '',
-    href: '',
-  },
-};
 
 MovieCard.propTypes = {
   movie: PropTypes.shape({

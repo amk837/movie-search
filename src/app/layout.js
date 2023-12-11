@@ -44,5 +44,4 @@ export default function RootLayout({ children = null }) {
   );
 }
 
-RootLayout.defaultProps = { children: null };
 RootLayout.propTypes = { children: node };
