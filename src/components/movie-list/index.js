@@ -49,7 +49,6 @@ export default function MovieList({
         ))
         ) : results.map((movieId) => {
           const movie = allMovies[movieId];
-          if (!movie.poster_path && !movie.backdrop_path) console.log(movie);
           return (
             <Box width='20%' mt={1} key={movieId}>
               <MovieCard

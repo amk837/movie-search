@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { Typography, keyframes } from '@mui/material';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { useState } from 'react';
 import Image from '../image';
 
 const Card = styled(Link)`
@@ -36,8 +36,7 @@ const ImageWrapper = styled.div`
   height: 100%;
   position: relative;
   &: hover {
-    animation: ${zoomIn} 5s ease infinite alternate; 
-    animation-fill-mode: both;
+    animation: ${zoomIn} ${({ linkBroken }) => (!linkBroken ? 5 : 0)}s ease infinite alternate; 
   }
 `;
 
@@ -58,11 +57,16 @@ export default function MovieCard({
     href = '',
   },
 }) {
+  const [linkBroken, setLinkBroken] = useState(false);
+
+  const onError = () => {
+    setLinkBroken(true);
+  };
   return (
     <Card href={href} title={title}>
       <ImageContainer>
-        <ImageWrapper>
-          <Image src={img} alt={title} sizes='20vw' />
+        <ImageWrapper linkBroken={linkBroken}>
+          <Image src={img} alt={title} sizes='20vw' onError={onError} />
         </ImageWrapper>
       </ImageContainer>
 
