@@ -31,6 +31,11 @@
     "rules": {
       "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
       "max-len": ["error", { "code": 160 }],
-      "linebreak-style": ["error", "windows"]
+      "linebreak-style": ["error", "windows"],
+      "quotes": ["error", "single"],
+      "jsx-quotes": ["error", "prefer-single"],
+      "jsx-a11y/anchor-has-content": 0,
+      "jsx-a11y/anchor-is-valid": "warn",
+      "no-param-reassign": ["error", { "props": false }]
     }
 }
